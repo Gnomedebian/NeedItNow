@@ -19,8 +19,10 @@ return new class extends Migration
             $table->decimal('price');
             $table->string('photo', 255)->nullable();
             $table->string('location', 50);
+            $table->string('phone', 50);
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('post_id')->constrained('offers')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

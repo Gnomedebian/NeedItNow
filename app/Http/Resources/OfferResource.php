@@ -21,6 +21,7 @@ class OfferResource extends JsonResource
             'price'=>$this->price,
             'photo'=>$this->photo,
             'location'=>$this->location,
+            'phone'=>$this->phone,
             'created_at'=>$this->created_at,
         ];
     }

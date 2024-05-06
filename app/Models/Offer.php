@@ -9,6 +9,15 @@ class Offer extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'offer_product_name',
+        'condition',
+        'description',
+        'price',
+        'photo',
+        'location',
+        'phone',
+    ];
     public function user() {
         return $this->belongsTo(User::class);
     }

@@ -13,8 +13,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = UserResource::collection(User::all());
-        return view('users.index', compact('users'));
+        //
     }
 
     /**
@@ -26,22 +25,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'full_name' => 'required|string|max:50',
-            'location' => 'nullable|string|max:50',
-            'phone' => 'nullable|string|min:9|max:10',
-            'email' => 'required|email|unique:users,email|max:255',
-            'password' => 'required|string|min:8|max:255'
-        ]);
-        $user = new User();
-        $user->full_name = $request->full_name;
-        $user->location = $request->location;
-        $user->phone = $request->phone;
-        $user->email = $request->email;
-        $user->password = bcrypt($request->password);  // Encrypt the password
-        $user->save();  // Save the user to the database
-
-        return redirect()->route('users.index');
+        //
     }
 
     /**

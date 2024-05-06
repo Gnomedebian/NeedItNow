@@ -1,0 +1,136 @@
+:root {
+    --mainColor: #633fbc;
+    --secondColor: #b7b8bc;
+    --fontColor: #1a202c;
+    --whiter: white;
+}
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Inter", sans-serif;
+}
+.container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h1 {
+    font-size: 19px;
+    font-weight: 500;
+}
+h2 {
+    font-size: 12px;
+    font-weight: 200;
+}
+.info-section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    min-height: fit-content;
+    padding: 50px;
+}
+.product-img {
+    background-image: url(../images/s-l1600.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: transparent;
+    background-position: center;
+    border-radius: 25px;
+    width: 50%;
+    height: 300px;
+}
+.product-infos {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 40px;
+}
+.product-infos p {
+    font-size: 12px;
+    font-weight: 200;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    padding-top: 5px;
+    border-top: 1px solid var(--secondColor);
+    text-align: justify;
+}
+.product-infos h1,
+h2 {
+    margin: 5px 5px;
+}
+.offer-btn {
+    color: var(--whiter);
+    background-color: var(--mainColor);
+    text-align: center;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+footer p {
+    margin-left: 30px;
+    font-weight: 400;
+    font-size: 12px;
+    color: var(--secondColor);
+}
+/* --- */
+.myoffer {
+    display: flex;
+    flex-direction: row;
+    width: 700px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+    min-height: 100px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+.offer-img {
+    background-image: url(../images/s-l1600.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: transparent;
+    background-position: center;
+    border-radius: 25px;
+    width: 250px;
+    height: 100px;
+    margin-right: 25px;
+}
+.offer-infos h1,
+h2 {
+    margin: 5px 5px;
+}
+.offer-infos p {
+    font-size: 12px;
+    font-weight: 200;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    padding-top: 5px;
+    border-top: 1px solid var(--secondColor);
+    text-align: justify;
+}
+.edit-btn,
+.delete-btn {
+    color: var(--whiter);
+    background-color: var(--mainColor);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.edit-btn {
+    border: 1px solid var(--mainColor);
+    color: var(--mainColor);
+    background-color: var(--whiter);
+}
+footer p {
+    margin-left: 30px;
+    font-weight: 400;
+    font-size: 12px;
+    color: var(--secondColor);
+}
