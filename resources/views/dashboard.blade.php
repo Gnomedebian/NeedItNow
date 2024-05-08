@@ -21,7 +21,9 @@
                     @foreach ($posts as $post)
                     <a href="{{ route('product_page.show', $post->id) }}">
                         <div class="card">
-                            <div class="card-img"></div>
+                            <div class="card-img">
+                                <img src="{{ asset('storage/' . $post->photo) }}" alt="photo">
+                            </div>
                                 <div class="card-info">
                                     <h1>{{ $post->product_name }}</h1>
                                     <h2>Location : {{ $post->location }}</h2>

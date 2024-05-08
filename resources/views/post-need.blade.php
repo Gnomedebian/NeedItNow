@@ -21,7 +21,7 @@
         <body>
             <div class="container">
                 {{-- wh give request method, and we give route name to action --}}
-            <form class="form" method="POST" action="/need">
+            <form class="form" method="POST" action="{{ route('posts.store') }}" enctype="multipart/form-data">
               @csrf
               <h1>Post Your Need</h1>
               <h3>Let's dig for your need !</h3>

@@ -57,7 +57,7 @@ h2 {
     cursor: pointer;
 }
 .card-img {
-    background-image: url(../images/s-l1600.jpg);
+    /* background-image: url(../images/s-l1600.jpg); */
     background-repeat: no-repeat;
     background-size: cover;
     background-color: transparent;

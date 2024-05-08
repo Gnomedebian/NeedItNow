@@ -21,7 +21,7 @@
         <body>
             <div class="container">
                 {{-- wh give request method, and we give route name to action --}}
-            <form class="form" method="POST" action="{{ route('posts.update', $post->id) }}">
+            <form class="form" method="POST" action="{{ route('posts.update', $post->id) }}" enctype="multipart/form-data">
               @csrf
               @method('PUT')
               <h1>Edit Your Need</h1>

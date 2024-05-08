@@ -26,7 +26,7 @@ class PostController extends Controller
         $request->validate([
             'product_name'=>['required', 'string', 'max:50'],
             'description'=>['required', 'string', 'max:255'],
-            'photo'=>['nullable'],
+            'photo'=>['nullable', 'image', 'mimes:jpeg,png,jpg', 'max:255'],
         ]);
         
         $user = auth()->user();  // Assumes the user is authenticated
@@ -77,7 +77,7 @@ class PostController extends Controller
         $request->validate([
             'product_name'=>['required', 'string', 'max:50'],
             'description'=>['required', 'string', 'max:255'],
-            'photo'=>['nullable'],
+            'photo'=>['nullable', 'image', 'mimes:jpeg,png,jpg', 'max:255'],
         ]);
         $post = Post::findOrFail($id);
 
@@ -96,6 +96,10 @@ class PostController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $post = Post::findOrFail($id);
+        
+        $post->delete();  // Delete the post from the database
+        
+        return redirect()->route('dashboard');
     }
 }

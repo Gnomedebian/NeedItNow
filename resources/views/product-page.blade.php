@@ -17,7 +17,9 @@
   <body>
     <div class="container">
       <div class="info-section">
-        <div class="product-img"></div>
+        <div class="product-img">
+          <img src="{{ asset('storage/' . $post->photo) }}" alt="photo">
+        </div>
         <div class="product-infos">
           <h1>{{ $post->product_name }}</h1>
           <h2>Location : {{ $post->location }}</h2>
@@ -27,7 +29,12 @@
           </p>
           
           @if ($isOwner)
-          <a {{--href="{{ route('post.edit', $post->id) }}"--}} class="offer-btn">Edit Your Need</a>
+          <a href="{{ route('posts.edit', $post->id) }}" class="offer-btn">Edit Your Need</a>
+          <form action="{{ route('posts.destroy', $post->id) }}" method="POST">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="delete-btn">Delete Need</button>
+          </form>
           @else
           <a href="{{ route('offer.create', $post->id) }}" class="offer-btn">Provide Offer</a>
           @endif
@@ -46,8 +53,6 @@
                 <p>
                   {{$offer->description}}
                 </p>
-                {{-- <button class="edit-btn">Edit Offer</button>
-                <button class="delete-btn">Delete Offer</button> --}}
               </div>
             </div>
             @endforeach

@@ -31,10 +31,11 @@ Route::middleware('auth')->group(function () {
         return view('give-offer', ['post_id' => $post_id]);
     })->name('offer.create');
     //arg1 = route name - arg2 = contoller - arg3 = function name from the controller.
-    Route::post('/need', [PostController::class, 'store']);
+    Route::post('/need', [PostController::class, 'store'])->name('post.store');
     Route::post('/offer', [PostController::class, 'store'])->name('offer.store');
     Route::get('/product_page/{id}', [ProductPageController::class, 'show'])->name('product_page.show');
     Route::get('/posts/{id}/edit', [PostController::class, 'edit'])->name('posts.edit');
+    Route::delete('/posts/{post_id}', [PostController::class, 'destroy'])->name('posts.destroy');
 
 });
 
