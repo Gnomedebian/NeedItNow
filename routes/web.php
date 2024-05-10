@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Route::resource('posts', PostController::class);
@@ -37,6 +37,15 @@ Route::middleware('auth')->group(function () {
     Route::get('/posts/{id}/edit', [PostController::class, 'edit'])->name('posts.edit');
     Route::delete('/posts/{post_id}', [PostController::class, 'destroy'])->name('posts.destroy');
 
+    Route::delete('/offers/{id}', [OfferController::class, 'destroy'])->name('offers.destroy');
+
+    //-----------------------------------------------------
+    // Route to display the edit form for a specific offer
+    Route::get('/offers/{id}/edit', [OfferController::class, 'edit'])->name('offer.edit');
+
+    // Route to handle the update of a specific offer
+    Route::patch('/offer/{id}', [OfferController::class, 'update'])->name('offer.update');
+    //-----------------------------------------------------
 });
 
 require __DIR__.'/auth.php';

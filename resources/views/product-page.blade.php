@@ -44,7 +44,9 @@
         <h3>Offers Received</h3>
         @foreach ($offers as $offer)
         <div class="myoffer">
-            <div class="offer-img"></div>
+            <div class="offer-img">
+              <img class="img-ofr" src="{{ asset('storage/' . $offer->photo) }}" alt="offer_img">
+            </div>
             <div class="offer-infos">
                 <h1>{{$offer->offer_product_name}}</h1>
                 <h2>Price: {{$offer->price}}</h2>
@@ -60,7 +62,9 @@
         <h3>Offers Given</h3>
         @foreach ($offers as $offer)
         <div class="myoffer">
-            <div class="offer-img"></div>
+            <div class="offer-img">
+              <img class="img-ofr" src="{{ asset('storage/' . $offer->photo) }}" alt="offer_img">
+            </div>
             <div class="offer-infos">
                 <h1>{{$offer->offer_product_name}}</h1>
                 <h2>Price: {{$offer->price}}</h2>
@@ -69,8 +73,14 @@
                 <p>
                   {{$offer->description}}
                 </p>
-                <button class="edit-btn">Edit Offer</button>
-                <button class="delete-btn">Delete Offer</button>
+                {{-- <button class="edit-btn">Edit Offer</button> --}}
+                <a href="{{ route('offers.edit', $offer->id) }}" class="edit-btn">Edit Offer</a>
+                {{-- <button class="delete-btn">Delete Offer</button> --}}
+                <form action="{{ route('offers.destroy', $offer->id) }}" method="POST">
+                  @csrf
+                  @method('DELETE')
+                  <button type="submit" class="delete-btn">Delete Offer</button>
+              </form>
               </div>
             </div>
             @endforeach

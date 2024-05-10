@@ -17,12 +17,11 @@ return new class extends Migration
             $table->string('condition', 50);
             $table->text('description');
             $table->decimal('price');
-            $table->string('photo', 255)->nullable();
+            $table->string('photo')->nullable();
             $table->string('location', 50);
             $table->string('phone', 50);
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreignId('post_id')->constrained('offers')->onDelete('cascade')->onUpdate('cascade');
-            // $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('post_id')->constrained('posts')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

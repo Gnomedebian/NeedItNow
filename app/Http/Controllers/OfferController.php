@@ -26,7 +26,7 @@ class OfferController extends Controller
             'condition'=>['required', 'string', 'max:50'],
             'description'=>['required', 'string', 'max:255'],
             'price'=>['required', 'numeric', 'regex:/^\d+(\.\d{1,2})?$/'],
-            'photo'=>['nullable'],
+            'photo'=>['nullable', 'image', 'mimes:jpeg,png,jpg'],
             'post_id' => ['required'],
         ]);
 
@@ -55,19 +55,12 @@ class OfferController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      */
     public function edit(string $id)
     {
-        //
+        $offer = Offer::findOrFail($id);
+        return view('edit-offer', compact('offer'));
     }
 
     /**
@@ -75,7 +68,31 @@ class OfferController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $validated = $request->validate([
+            'offer_product_name' => ['required', 'string', 'max:50'],
+            'condition' => ['required', 'string', 'max:50'],
+            'description' => ['required', 'string', 'max:255'],
+            'price' => ['required', 'numeric', 'regex:/^\d+(\.\d{1,2})?$/'],
+            'photo'=>['nullable', 'image', 'mimes:jpeg,png,jpg'],
+        ]);
+
+        $offer = Offer::findOrFail($id);
+
+        // Update the offer with new values
+        $offer->offer_product_name = $request->offer_product_name;
+        $offer->condition = $request->condition;
+        $offer->description = $request->description;
+        $offer->price = $request->price;
+
+        // If a new photo is provided, handle the upload
+        if ($request->hasFile('photo')) {
+            $photoPath = $request->file('photo')->store('photos', 'public');
+            $offer->photo = $photoPath;
+        }
+
+        $offer->save();
+
+        return redirect()->route('dashboard');
     }
 
     /**
@@ -83,6 +100,9 @@ class OfferController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $offer = Offer::findOrFail($id);
+        $offer->delete();
+
+        return redirect()->route('dashboard');
     }
 }

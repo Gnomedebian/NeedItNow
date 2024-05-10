@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="{{ asset('css/give-offer.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/edit-offer.css') }}" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,9 +17,10 @@
     <x-app-layout>
     </x-app-layout>
     <div class="container">
-      <form class="form" method="POST" action="{{ route('offers.update') }}">
+        <form class="form" action="{{ route('offers.update', $offer->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
-        <h1>Editoffer</h1>
+        @method('PATCH')
+        <h1>Edit offer</h1>
         <p>Product Title</p>
         <input
           name="offer_product_name"
@@ -54,8 +55,6 @@
         <div class="drag">
           <input name="photo" type="file" accept="image/*" id="drag-file" />
         </div>
-      {{-- post_id input --}}
-        <input type="hidden" name="post_id" value="{{ $post_id }}">
         <div class="btn">
           <button class="submit">Submit</button>
           <button type="button" onclick="window.history.back();" class="cancel">Cancel</button>

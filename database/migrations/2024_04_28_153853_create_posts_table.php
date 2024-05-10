@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('product_name', 50);
             $table->text('description');
-            $table->string('photo', 255)->nullable();
+            $table->string('photo')->nullable();
             $table->string('location', 50);
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();

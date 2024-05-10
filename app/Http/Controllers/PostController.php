@@ -26,7 +26,7 @@ class PostController extends Controller
         $request->validate([
             'product_name'=>['required', 'string', 'max:50'],
             'description'=>['required', 'string', 'max:255'],
-            'photo'=>['nullable', 'image', 'mimes:jpeg,png,jpg', 'max:255'],
+            'photo'=>['nullable', 'image', 'mimes:jpeg,png,jpg'],
         ]);
         
         $user = auth()->user();  // Assumes the user is authenticated
@@ -77,7 +77,7 @@ class PostController extends Controller
         $request->validate([
             'product_name'=>['required', 'string', 'max:50'],
             'description'=>['required', 'string', 'max:255'],
-            'photo'=>['nullable', 'image', 'mimes:jpeg,png,jpg', 'max:255'],
+            'photo'=>['nullable', 'image', 'mimes:jpeg,png,jpg'],
         ]);
         $post = Post::findOrFail($id);
 

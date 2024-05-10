@@ -40,9 +40,17 @@ h2 {
     background-size: cover;
     background-color: transparent;
     background-position: center;
+    overflow: hidden;
+    position: relative;
     border-radius: 25px;
     width: 50%;
     height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.product-img img {
+    min-width: 100%;
 }
 .product-infos {
     display: flex;
@@ -95,15 +103,18 @@ footer p {
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
 }
 .offer-img {
-    /* background-image: url(../images/s-l1600.jpg); */
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: transparent;
-    background-position: center;
     border-radius: 25px;
+    overflow: hidden;
     width: 250px;
-    height: 100px;
+    height: 200px;
     margin-right: 25px;
+}
+.img-ofr {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 25px;
 }
 .offer-infos h1,
 h2 {

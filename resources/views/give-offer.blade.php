@@ -17,7 +17,7 @@
     <x-app-layout>
     </x-app-layout>
     <div class="container">
-      <form class="form" method="POST" action="{{ route('offers.store') }}">
+      <form class="form" method="POST" action="{{ route('offers.store') }}" enctype="multipart/form-data">
         @csrf
         <h1>Give an offer</h1>
         <h3>Please fill it with true informations !</h3>
