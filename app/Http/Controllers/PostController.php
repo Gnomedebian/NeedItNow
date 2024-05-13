@@ -7,8 +7,6 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-  
-
     /**
      * Display a listing of the resource.
      */
@@ -50,14 +48,6 @@ class PostController extends Controller
         // Redirect to the index view
         return redirect()->route('dashboard');
     
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
     }
 
     /**

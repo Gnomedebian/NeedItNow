@@ -73,9 +73,7 @@
                 <p>
                   {{$offer->description}}
                 </p>
-                {{-- <button class="edit-btn">Edit Offer</button> --}}
                 <a href="{{ route('offers.edit', $offer->id) }}" class="edit-btn">Edit Offer</a>
-                {{-- <button class="delete-btn">Delete Offer</button> --}}
                 <form action="{{ route('offers.destroy', $offer->id) }}" method="POST">
                   @csrf
                   @method('DELETE')
