@@ -31,10 +31,10 @@
         />
         <p>Condition</p>
         <select name="condition" id="dropdown">
-          <option value="option1">New</option>
-          <option value="option2" selected>Used like new</option>
-          <option value="option3">Good</option>
-          <option value="option3">Bad</option>
+          <option value="New">New</option>
+          <option value="Used like new" selected>Used like new</option>
+          <option value="Good">Good</option>
+          <option value="Bad">Bad</option>
         </select>
         <p>Price</p>
         <input

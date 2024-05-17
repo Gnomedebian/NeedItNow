@@ -23,9 +23,9 @@
                 {{-- wh give request method, and we give route name to action --}}
             <form class="form" method="POST" action="{{ route('posts.store') }}" enctype="multipart/form-data">
               @csrf
-              <h1>Post Your Need</h1>
-              <h3>Let's dig for your need !</h3>
-              <p>Product Title</p>
+              <h1 class="h1">Post Your Need</h1>
+              <h3 class="h3">Let's dig for your need !</h3>
+              <p class="p">Product Title</p>
               <input
                 id="product-title"
                 name="product_name"
@@ -33,7 +33,7 @@
                 type="text"
                 placeholder="I need..."
               />
-              <p>Description</p>
+              <p class="p">Description</p>
               <textarea
                 id="description"
                 name="description"

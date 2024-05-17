@@ -19,13 +19,23 @@
     flex-direction: column;
     align-items: center;
 }
-h1 {
+.h1 {
     font-size: 19px;
     font-weight: 500;
 }
-h2 {
+.h2 {
     font-size: 12px;
+    font-weight: 300;
+}
+.h5 {
+    font-size: 10px;
     font-weight: 200;
+}
+.ofr-title {
+    font-size: 19px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    color: rgb(107 114 128);
 }
 .info-section {
     display: flex;
@@ -67,8 +77,8 @@ h2 {
     border-top: 1px solid var(--secondColor);
     text-align: justify;
 }
-.product-infos h1,
-h2 {
+.product-infos .h1,
+.h2 {
     margin: 5px 5px;
 }
 .offer-btn {
@@ -116,8 +126,8 @@ footer p {
     object-position: center;
     border-radius: 25px;
 }
-.offer-infos h1,
-h2 {
+.offer-infos .h1,
+.h2 {
     margin: 5px 5px;
 }
 .offer-infos p {

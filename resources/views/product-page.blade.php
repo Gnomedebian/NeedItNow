@@ -21,10 +21,10 @@
           <img src="{{ asset('storage/' . $post->photo) }}" alt="photo">
         </div>
         <div class="product-infos">
-          <h1>{{ $post->product_name }}</h1>
-          <h2>Location : {{ $post->location }}</h2>
-          <h5>{{ $post->created_at->format('M d, Y') }}</h5>
-          <p>
+          <h1 class="h1">{{ $post->product_name }}</h1>
+          <h2 class="h2">Location : {{ $post->location }}</h2>
+          <h5 class="h5">{{ $post->created_at->format('M d, Y') }}</h5>
+          <p class="p">
             {{ $post->description }}
           </p>
           
@@ -41,36 +41,37 @@
         </div>
       </div>
         @if ($isOwner) {{--owner of the post--}}
-        <h3>Offers Received</h3>
+        <h1 class="ofr-title">Offers Received</h1>
         @foreach ($offers as $offer)
         <div class="myoffer">
             <div class="offer-img">
               <img class="img-ofr" src="{{ asset('storage/' . $offer->photo) }}" alt="offer_img">
             </div>
             <div class="offer-infos">
-                <h1>{{$offer->offer_product_name}}</h1>
-                <h2>Price: {{$offer->price}}</h2>
-                <h2>Location: {{$offer->location}}</h2>
-                <h2>Phone: {{$offer->phone}}</h2>
-                <p>
+                <h1 class="h1">{{$offer->offer_product_name}}</h1>
+                <h2 class="h2">Price: {{$offer->price}}</h2>
+                <h2 class="h2">Location: {{$offer->location}}</h2>
+                <h2 class="h2">Phone: {{$offer->phone}}</h2>
+                <p class="p">
                   {{$offer->description}}
                 </p>
               </div>
             </div>
             @endforeach
         @else
-        <h3>Offers Given</h3>
+        <h1 class="ofr-title">Offers Given</h1>
         @foreach ($offers as $offer)
         <div class="myoffer">
             <div class="offer-img">
               <img class="img-ofr" src="{{ asset('storage/' . $offer->photo) }}" alt="offer_img">
             </div>
             <div class="offer-infos">
-                <h1>{{$offer->offer_product_name}}</h1>
-                <h2>Price: {{$offer->price}}</h2>
-                <h2>Location: {{$offer->location}}</h2>
-                <h2>Phone: {{$offer->phone}}</h2>
-                <p>
+                <h1 class="h1">{{$offer->offer_product_name}}</h1>
+                <h2 class="h2">Price: {{$offer->price}}</h2>
+                <h2 class="h2">Condition: {{$offer->condition}}</h2>
+                <h2 class="h2">Location: {{$offer->location}}</h2>
+                <h2 class="h2">Phone: {{$offer->phone}}</h2>
+                <p class="p">
                   {{$offer->description}}
                 </p>
                 <a href="{{ route('offers.edit', $offer->id) }}" class="edit-btn">Edit Offer</a>

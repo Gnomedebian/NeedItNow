@@ -25,9 +25,9 @@
                                 <img src="{{ asset('storage/' . $post->photo) }}" alt="photo">
                             </div>
                                 <div class="card-info">
-                                    <h1>{{ $post->product_name }}</h1>
-                                    <h2>Location : {{ $post->location }}</h2>
-                                    <p>
+                                    <h1 class="h1">{{ $post->product_name }}</h1>
+                                    <h2 class="h2">Location : {{ $post->location }}</h2>
+                                    <p class="p">
                                         {{ $post->description }}
                                     </p>
                                 </div>

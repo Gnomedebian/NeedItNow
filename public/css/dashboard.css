@@ -27,11 +27,11 @@
     padding: 10px;
     border-radius: 5px;
 }
-h1 {
+.h1 {
     font-size: 19px;
     font-weight: 500;
 }
-h2 {
+.h2 {
     font-size: 12px;
     font-weight: 200;
 }
@@ -42,7 +42,6 @@ h2 {
     min-height: 100px;
     align-items: flex-start;
     flex-wrap: wrap;
-    justify-content: space-between;
 }
 .card {
     display: flex;
@@ -53,6 +52,7 @@ h2 {
     border-radius: 5px;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
     margin-top: 25px;
+    margin-right: 20px;
     padding: 15px;
     cursor: pointer;
 }
@@ -75,11 +75,11 @@ h2 {
 .card-info {
     margin-left: 5%;
 }
-.card-info h1,
-h2 {
+.card-info .h1,
+.h2 {
     margin-top: 5px;
 }
-.card-info p {
+.card-info .p {
     margin-top: 10px;
     margin-bottom: 10px;
     text-align: justify;
@@ -89,7 +89,7 @@ h2 {
     border-top: 1px solid var(--fontColor);
     padding-top: 5px;
 }
-footer p {
+footer .p {
     margin-left: 30px;
     font-weight: 400;
     font-size: 12px;

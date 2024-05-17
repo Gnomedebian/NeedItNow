@@ -11,13 +11,12 @@
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                <div class="hidden space-x-8 sm:-my-px sm:ms-6 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('NeedItNow') }}
                     </x-nav-link>
                 </div>
             </div>
-
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 <x-dropdown align="right" width="48">
@@ -49,35 +48,12 @@
                         </form>
                     </x-slot>
                 </x-dropdown>
+                {{-- post your needs button --}}
+                <div class="flex items-center">
+                    <a href="/need" class=" px-4 py-2 bg-[#633fbc] border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-600 focus:bg-gray-600 active:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150">{{ __('Post Your Need') }}</a>
+                </div>
             </div>
-            {{-- post your needs button --}}
-            <div>
-                <a href="/need" class="post-btn">{{ __('Post Your Need') }}</a>
-                <style>
-                    :root {
-                        --mainColor: #633fbc;
-                        --secondColor: #b7b8bc;
-                        --fontColor: #1a202c;
-                        --whiter: white;
-                        }
-                    .post-btn{
-                        color: var(--whiter);
-                        background-color: var(--mainColor);
-                        display: block;
-                        align-content: center;
-                        font-weight: 500;
-                        font-size: 12px;
-                        min-width: fit-content;
-                        max-width: fit-content;
-                        margin-top: 6px;
-                        height: 40px;
-                        padding: 5px;
-                        border: none;
-                        border-radius: 5px;
-                        cursor: pointer;
-                    }
-                </style>
-            </div>
+            
             <!-- Hamburger -->
             <div class="-me-2 flex items-center sm:hidden">
                 <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
