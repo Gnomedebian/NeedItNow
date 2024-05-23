@@ -58,6 +58,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    outline: 0.5px solid gray;
 }
 .product-img img {
     min-width: 100%;
@@ -133,6 +134,7 @@ footer p {
 .offer-infos p {
     font-size: 12px;
     font-weight: 200;
+    max-width: 400px;
     margin-top: 5px;
     margin-bottom: 15px;
     padding-top: 5px;

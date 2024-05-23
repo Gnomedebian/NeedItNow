@@ -67,7 +67,7 @@
             </div>
             <div class="offer-infos">
                 <h1 class="h1">{{$offer->offer_product_name}}</h1>
-                <h2 class="h2">Price: {{$offer->price}}</h2>
+                <h2 class="h2">Price: {{$offer->price}} DH</h2>
                 <h2 class="h2">Condition: {{$offer->condition}}</h2>
                 <h2 class="h2">Location: {{$offer->location}}</h2>
                 <h2 class="h2">Phone: {{$offer->phone}}</h2>

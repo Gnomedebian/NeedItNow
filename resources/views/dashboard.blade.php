@@ -38,7 +38,7 @@
                 </div>
             </div>
             <footer>
-            <p>© 2024 NeedItNow® Yassine Amgarou • Privacy Policy</p>
+                <p>© 2024 NeedItNow® Yassine Amgarou • Privacy Policy</p>
             </footer>
         </body>
 </html>
